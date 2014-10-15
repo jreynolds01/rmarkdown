@@ -373,7 +373,8 @@ render <- function(input,
                    file_with_ext(output_file, "tex"),
                    run_citeproc,
                    output_format$pandoc$args,
-                   !quiet)
+                   !quiet,
+                   ".")
   }
 
   # run the main conversion
@@ -383,8 +384,9 @@ render <- function(input,
                  output_file,
                  run_citeproc,
                  output_format$pandoc$args,
-                 !quiet)
-  
+                 !quiet,
+                 ".")
+
   # pandoc writes the output alongside the input, so if we rendered from an 
   # intermediate directory, move the output file
   if (!is.null(intermediates_dir)) {
